@@ -45,7 +45,7 @@ title: Split a sangre
 ::right::
 
 <div class="panel panel-after">
-  <div class="eyebrow">Ahora</div>
+  <div class="eyebrow success">Ahora</div>
   <h1>Un theme<br>versionado</h1>
   <p>Un paquete lo aporta todo; el deck solo trae contenido.</p>
 </div>

@@ -211,7 +211,10 @@
 .panel-before { background: var(--surface); }
 .panel-after { background: var(--surface2); }
 .panel-before .eyebrow { color: var(--text-dim); }
-.panel-after .eyebrow { color: var(--green); }
+/* Semantic kicker colors are opt-in: structure never implies a verdict. */
+.eyebrow.success { color: var(--green); }
+.eyebrow.danger { color: var(--red); }
+.eyebrow.warning { color: var(--orange); }
 
 /* ---------- Tables ---------- */
 .slidev-layout table { border-collapse: collapse; font-size: 0.8rem; margin-top: 0.9rem; width: 100%; }
