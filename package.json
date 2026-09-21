@@ -1,0 +1,39 @@
+{
+  "name": "slidev-theme-entaina",
+  "version": "0.1.0",
+  "description": "Entaina brand theme for Slidev: token-driven look, deck navigation chrome, and the three pillar variants (technology, innovation, people).",
+  "keywords": [
+    "slidev-theme",
+    "slidev",
+    "entaina"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Entaina/slidev-theme-entaina"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "slidev": ">=0.48.0"
+  },
+  "slidev": {
+    "defaults": {
+      "fonts": {
+        "sans": "Lato",
+        "serif": "Comfortaa",
+        "mono": "JetBrains Mono",
+        "weights": "300,400,500,600,700"
+      }
+    },
+    "colorSchema": "light"
+  },
+  "scripts": {
+    "dev": "slidev example.md --open",
+    "build": "slidev build example.md",
+    "export": "slidev export example.md",
+    "test": "node --test test/"
+  },
+  "devDependencies": {
+    "@slidev/cli": "latest"
+  }
+}
