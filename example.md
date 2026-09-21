@@ -76,6 +76,50 @@ Tabla estilizada por el theme: cabecera acento, zebra.
 -->
 
 ---
+title: Dashboard KPI
+---
+
+<div class="eyebrow">Dashboard</div>
+
+# Los valores hero, breves
+
+<div class="kpi-grid">
+  <div class="kpi"><b>6</b><span>KPIs máximo</span></div>
+  <div class="kpi"><b>≤6</b><span>caracteres hero</span></div>
+  <div class="kpi"><b>3</b><span>colores de pilar</span></div>
+  <div class="kpi"><b>scan</b><span>no lectura lineal</span></div>
+  <div class="kpi"><b>1</b><span>heading</span></div>
+  <div class="kpi"><b>100%</b><span>desde tokens</span></div>
+</div>
+
+<!--
+Duración estimada: 30 s.
+Dashboard: cifras display con rotación de pilares, etiquetas mono.
+-->
+
+---
+title: Snippet de código
+---
+
+<div class="eyebrow">Code</div>
+
+# Un punto de código, con foco
+
+<div class="code-file">slide.ts</div>
+
+```ts {2-3}
+export function slide(content: Content): Slide {
+  const focal = content.mainIdea()      // una sola idea
+  return compose(focal, content.supports.slice(0, 6))
+}
+```
+
+<!--
+Duración estimada: 30 s.
+Caja navy de marca con chip de fichero flotante; tokens Shiki oscuros del theme.
+-->
+
+---
 layout: quote
 ---
 

@@ -23,6 +23,10 @@ Las fuentes (Lato, Comfortaa, JetBrains Mono, pesos 300–700) llegan como defau
 - **`styles/tokens.css`** — la paleta Entaina como defaults en `:root`, más las variantes de pilar: `htmlAttrs: { data-theme: technology | innovation | people }` en el headmatter del deck.
 - **`styles/base.css`** — el look, 100% sobre tokens: atmósfera por layout, escala display, kickers `.eyebrow`/`.cover-kicker`, cover/section/quote estilizados, splits a sangre con `.panel .panel-before/.panel-after`, tablas, la portada oscura `layout: cover` + `class: bleed` (con `.bleed-note`), y el reveal de entrada escalonado (respeta `prefers-reduced-motion` y print).
 - **`global-top.vue`** — chrome de navegación: barra de progreso, bolitas laterales que se expanden al hover mostrando títulos, flechas anterior/siguiente y contador `n / total · %`. Se oculta en export y en modo presentador. Teclado, transiciones, overview (`o`) y export siguen siendo de Slidev.
+- **Componentes** (clases sobre HTML plano en las slides):
+  - KPI dashboard: `<div class="kpi-grid"><div class="kpi"><b>247</b><span>etiqueta</span></div>…</div>` — cifras display con rotación de colores de pilar, etiquetas mono; valores hero breves (≤6 caracteres).
+  - Código: los bloques fenced van en caja navy de marca con tokens oscuros (`setup/shiki.ts`, one-dark-pro en ambos esquemas) y soportan el resaltado de líneas de Slidev (` ```ts {2-3} `). Chip de fichero flotante: `<div class="code-file">worker.ts</div>` justo antes del fence.
+  - Kickers semánticos opt-in: `.eyebrow.success` / `.danger` / `.warning` — solo cuando el contenido afirma un estado.
 
 ## Personalización
 
