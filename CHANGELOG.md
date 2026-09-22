@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/Entaina/slidev-theme-entaina/compare/v0.2.0...v0.2.1) (2026-09-22)
+
+
+### Bug Fixes
+
+* **test:** make the test script node-portable ([9c522ea](https://github.com/Entaina/slidev-theme-entaina/commit/9c522eab146a0a72cf74723de7d553753ee4b242))
+
 ## [0.2.0](https://github.com/Entaina/slidev-theme-entaina/compare/v0.1.0...v0.2.0) (2026-09-22)
 
 
