@@ -1,6 +1,11 @@
 {
   "name": "slidev-theme-entaina",
   "version": "0.1.0",
+  "private": false,
+  "packageManager": "npm@11.19.0",
+  "publishConfig": {
+    "access": "public"
+  },
   "description": "Entaina brand theme for Slidev: token-driven look, deck navigation chrome, and the three pillar variants (technology, innovation, people).",
   "keywords": [
     "slidev-theme",
@@ -10,8 +15,20 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Entaina/slidev-theme-entaina"
+    "url": "git+https://github.com/Entaina/slidev-theme-entaina.git"
   },
+  "bugs": {
+    "url": "https://github.com/Entaina/slidev-theme-entaina/issues"
+  },
+  "homepage": "https://github.com/Entaina/slidev-theme-entaina#readme",
+  "files": [
+    "styles",
+    "setup",
+    "global-top.vue",
+    "example.md",
+    "README.md",
+    "LICENSE"
+  ],
   "engines": {
     "node": ">=18.0.0",
     "slidev": ">=0.48.0"
