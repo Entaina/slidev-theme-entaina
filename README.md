@@ -43,6 +43,14 @@ El contrato son 27 tokens CSS (ver `styles/tokens.css` y `test/contract.test.mjs
 
 Reglas propias del deck: en su `style.css`, en rem ajustado al lienzo 980×552 de Slidev (nunca vw/vh — el lienzo escala con un transform y las unidades de viewport se escalan doble).
 
+### Qué pilar usar
+
+- **Technology** (default): contenido técnico u operativo — sistemas, código, datos. En caso de duda, este.
+- **Innovation** (`data-theme: innovation`): lo nuevo — estrategia, propuestas, visión, roadmaps.
+- **People** (`data-theme: people`): personas en el centro — formación, talento, cultura, onboarding.
+
+Un pilar por deck (los tres colores de pilar siguen disponibles como acentos en todas las variantes), y los colores semánticos (`--green/--red/--orange`) siguen significando estado, no pilar.
+
 ## Notas
 
 - Dos internals de Slidev ya resueltos por el CSS: `layout: two-cols` renderiza la clase `.two-columns` (slots en `.col-left`/`.col-right`) y `layout: cover` envuelve el contenido en un `div.my-auto`.
