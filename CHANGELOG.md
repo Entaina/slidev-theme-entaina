@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.2](https://github.com/Entaina/slidev-theme-entaina/compare/v0.2.1...v0.2.2) (2026-09-28)
+
+
+### Bug Fixes
+
+* **navigation:** remove redundant slide arrows ([095a178](https://github.com/Entaina/slidev-theme-entaina/commit/095a1784aa89af00938cbc137c96343b434285ee))
+* support composed and long decks ([d49b764](https://github.com/Entaina/slidev-theme-entaina/commit/d49b764921c14da4e956fce047585f5a10951def))
+
 ## [0.2.1](https://github.com/Entaina/slidev-theme-entaina/compare/v0.2.0...v0.2.1) (2026-09-22)
 
 
