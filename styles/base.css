@@ -232,7 +232,7 @@
 .slidev-layout tr:nth-child(even) td { background: var(--surface-elevated); }
 
 /* ---------- Full-bleed cover variant: `layout: cover` + `class: bleed` ---------- */
-.slidev-layout.cover.bleed {
+.slidev-layout.cover:is(.bleed, :has(.bleed-note)) {
   align-items: flex-start;
   background:
     radial-gradient(circle at 80% 20%, color-mix(in srgb, var(--node-b) 55%, transparent), transparent 30%),
@@ -243,12 +243,13 @@
   padding: 3rem 3.5rem;
   text-align: left;
 }
-.slidev-layout.cover.bleed::before {
+.slidev-layout.cover:is(.bleed, :has(.bleed-note))::before {
   background-image:
     linear-gradient(90deg, transparent 49.3%, rgba(255, 255, 255, 0.6) 49.3%, rgba(255, 255, 255, 0.6) 50.7%, transparent 50.7%),
     linear-gradient(0deg, transparent 49.3%, rgba(255, 255, 255, 0.6) 49.3%, rgba(255, 255, 255, 0.6) 50.7%, transparent 50.7%);
   background-size: 110px 110px;
   content: '';
+  height: auto;
   inset: 0;
   opacity: 0.34;
   pointer-events: none;
@@ -257,9 +258,9 @@
   transform-origin: bottom;
   z-index: 0;
 }
-.slidev-layout.cover.bleed > * { position: relative; z-index: 1; }
-.slidev-layout.cover.bleed > div { margin-bottom: 0; margin-top: auto; }
-.slidev-layout.cover.bleed h1 {
+.slidev-layout.cover:is(.bleed, :has(.bleed-note)) > * { position: relative; z-index: 1; }
+.slidev-layout.cover:is(.bleed, :has(.bleed-note)) > div { margin-bottom: 0; margin-top: auto; }
+.slidev-layout.cover:is(.bleed, :has(.bleed-note)) h1 {
   color: #fff;
   font-size: 2.9rem;
   letter-spacing: -0.04em;
@@ -267,9 +268,9 @@
   max-width: none;
   text-align: left;
 }
-.slidev-layout.cover.bleed p { color: rgba(255, 255, 255, 0.8); }
-.slidev-layout.cover.bleed .cover-kicker,
-.slidev-layout.cover.bleed .eyebrow { color: rgba(255, 255, 255, 0.78); }
+.slidev-layout.cover:is(.bleed, :has(.bleed-note)) p { color: rgba(255, 255, 255, 0.8); }
+.slidev-layout.cover:is(.bleed, :has(.bleed-note)) .cover-kicker,
+.slidev-layout.cover:is(.bleed, :has(.bleed-note)) .eyebrow { color: rgba(255, 255, 255, 0.78); }
 .bleed-note {
   background: rgba(0, 0, 0, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.45);

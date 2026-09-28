@@ -11,6 +11,7 @@ import { useNav } from '@slidev/client'
 const nav = useNav()
 const current = computed(() => nav.currentPage.value)
 const total = computed(() => nav.total.value)
+const isCompact = computed(() => total.value >= 50)
 const pct = computed(() => Math.round((current.value / total.value) * 100))
 const hidden = computed(() => nav.isPrintMode.value || (nav as any).isPresenter?.value)
 const titles = computed(() =>
@@ -25,7 +26,7 @@ const titles = computed(() =>
 <template>
   <div v-if="!hidden" class="deck-chrome">
     <div class="deck-progress" :style="{ width: pct + '%' }" />
-    <nav class="deck-dots" aria-label="Navegación por diapositivas">
+    <nav :class="['deck-dots', { 'deck-dots--compact': isCompact }]" aria-label="Navegación por diapositivas">
       <button
         v-for="(t, i) in titles"
         :key="i"
@@ -65,7 +66,8 @@ const titles = computed(() =>
   display: flex;
   flex-direction: column;
   gap: 5px;
-  max-height: 70dvh;
+  /* Compensate for Slidev's canvas transform so the rendered rail stays at 70dvh. */
+  max-height: calc(70dvh / var(--slidev-slide-scale, 1));
   overflow: hidden auto;
   padding: 7px;
   pointer-events: auto;
@@ -74,8 +76,9 @@ const titles = computed(() =>
   top: 50%;
   transform: translateY(-50%);
   transition: width 0.2s;
-  width: 34px;
+  width: 38px;
 }
+.deck-dots--compact { gap: 1px; }
 .deck-dots:hover,
 .deck-dots:focus-within {
   border-radius: 16px;
@@ -93,6 +96,7 @@ const titles = computed(() =>
   gap: 0;
   grid-template-columns: 8px minmax(0, 1fr);
   min-height: 24px;
+  min-width: 24px;
   padding: 6px;
   text-align: left;
 }

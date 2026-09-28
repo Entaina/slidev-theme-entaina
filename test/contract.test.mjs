@@ -45,3 +45,35 @@ test("pillar variants redefine only tokens that :root defines", () => {
 		assert.deepEqual(foreign, []);
 	}
 });
+
+test("full-bleed covers support the class and imported-slide marker through one variant", () => {
+	const base = read("styles/base.css");
+	const selector = ".slidev-layout.cover:is(.bleed, :has(.bleed-note))";
+	assert.ok(base.includes(`${selector} {`));
+	assert.ok(base.includes(`${selector}::before {`));
+	const grid = base.match(/\.slidev-layout\.cover:is\(\.bleed, :has\(\.bleed-note\)\)::before\s*{([\s\S]*?)}/)?.[1] || "";
+	assert.match(grid, /height: auto;/);
+	assert.doesNotMatch(base, /\.slidev-layout\.cover\.bleed/);
+});
+
+test("long-deck navigation uses the accessible theme compact mode", () => {
+	const chrome = read("global-top.vue");
+	assert.match(chrome, /const isCompact = computed\(\(\) => total\.value >= 50\)/);
+	assert.match(chrome, /:class="\['deck-dots', \{ 'deck-dots--compact': isCompact \}\]"/);
+	assert.match(chrome, /\.deck-dots--compact\s*{\s*gap: 1px;/);
+	assert.doesNotMatch(chrome, /:has\([^}]*\.deck-dot:nth-child/);
+
+	const rail = chrome.match(/\.deck-dots\s*{([\s\S]*?)}/)?.[1] || "";
+	assert.match(rail, /max-height: calc\(70dvh \/ var\(--slidev-slide-scale, 1\)\);/);
+	assert.match(rail, /overflow: hidden auto;/);
+	assert.match(rail, /padding: 7px;/);
+	assert.match(rail, /width: 38px;/);
+
+	const target = chrome.match(/\.deck-dot\s*{([\s\S]*?)}/)?.[1] || "";
+	assert.match(target, /min-height: 24px;/);
+	assert.match(target, /min-width: 24px;/);
+	assert.match(chrome, /aria-label="Navegación por diapositivas"/);
+	assert.match(chrome, /:aria-label="`Ir a \$\{t}`"/);
+	assert.match(chrome, /:focus-within/);
+	assert.match(chrome, /:focus-visible/);
+});
