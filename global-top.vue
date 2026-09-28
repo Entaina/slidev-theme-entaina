@@ -1,8 +1,8 @@
 <!--
   slidev-theme-entaina — deck navigation chrome: top progress bar, right-hand
-  slide dots that expand on hover to show slide titles, prev/next arrows
-  (bottom left) and a counter with reading percent (bottom right). Hidden in
-  print/export and presenter mode. Styled through the theme tokens.
+  slide dots that expand on hover to show slide titles, and a counter with
+  reading percent (bottom right). Prev/next is Slidev's own toolbar's job.
+  Hidden in print/export and presenter mode. Styled through the theme tokens.
 -->
 <script setup lang="ts">
 import { computed } from 'vue'
@@ -38,10 +38,6 @@ const titles = computed(() =>
         <span class="deck-dot-label">{{ t }}</span>
       </button>
     </nav>
-    <div class="deck-arrows">
-      <button type="button" class="deck-arrow" :disabled="current <= 1" aria-label="Anterior" @click="nav.prev()">←</button>
-      <button type="button" class="deck-arrow" :disabled="current >= total" aria-label="Siguiente" @click="nav.next()">→</button>
-    </div>
     <div class="deck-counter">{{ current }} / {{ total }} · {{ pct }}%</div>
   </div>
 </template>
@@ -119,31 +115,7 @@ const titles = computed(() =>
 .deck-dots:hover .deck-dot-label,
 .deck-dots:focus-within .deck-dot-label { max-width: 200px; opacity: 1; }
 .deck-dot[aria-current='true'] { background: var(--accent-dim); color: var(--accent); }
-.deck-dot:focus-visible,
-.deck-arrow:focus-visible { outline: 3px solid var(--node-b); outline-offset: 2px; }
-
-.deck-arrows {
-  bottom: 12px;
-  display: flex;
-  gap: 6px;
-  left: 20px;
-  pointer-events: auto;
-  position: absolute;
-}
-.deck-arrow {
-  background: color-mix(in srgb, var(--surface-elevated) 80%, transparent);
-  border: 1px solid var(--border-bright);
-  border-radius: 50%;
-  color: var(--accent-dark, var(--accent));
-  cursor: pointer;
-  display: grid;
-  font-size: 14px;
-  height: 30px;
-  place-items: center;
-  width: 30px;
-}
-.deck-arrow:hover:not(:disabled) { background: var(--accent-dim); }
-.deck-arrow:disabled { cursor: default; opacity: 0.35; }
+.deck-dot:focus-visible { outline: 3px solid var(--node-b); outline-offset: 2px; }
 
 .deck-counter {
   bottom: 16px;
